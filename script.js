@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
       ballons();
     } else {
       box.classList.add('hidden');
-      btn.textContent = 'Click Me for a Surprise!';
+      btn.textContent = 'Click Me for a Dick!';
     }
   });
 
