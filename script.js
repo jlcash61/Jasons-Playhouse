@@ -86,13 +86,21 @@ document.addEventListener('DOMContentLoaded', () => {
     ducks = ducks.filter((duck) => duck.x < canvas.width + 50);
   }
 
+  function drawPop(x, y) {
+    ctx.font = "24px sans-serif";
+    ctx.fillText("💥", x, y);
+    setTimeout(() => {
+      drawDucks();
+    }, 200);
+  }
+
   function gameLoop() {
     if (!ctx) return;
     drawDucks();
     requestAnimationFrame(gameLoop);
   }
 
-  canvas?.addEventListener('click', (e) => {
+  canvas?.addEventListener('pointerdown', (e) => {
     const rect = canvas.getBoundingClientRect();
     const x = e.clientX - rect.left;
     const y = e.clientY - rect.top;
@@ -102,6 +110,10 @@ document.addEventListener('DOMContentLoaded', () => {
         ducks.splice(index, 1);
         score++;
         scoreDisplay.textContent = `Score: ${score}`;
+        drawPop(x, y);
+        // play sound if available
+        const audio = document.getElementById('popSound');
+        audio?.play().catch(() => {});
       }
     });
   });
