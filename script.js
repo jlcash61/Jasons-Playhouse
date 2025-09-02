@@ -6,6 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (box.classList.contains('hidden')) {
       box.classList.remove('hidden');
       btn.textContent = 'Hide the Magic';
+      ballons();
     } else {
       box.classList.add('hidden');
       btn.textContent = 'Click Me for a Surprise!';
@@ -62,7 +63,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // --- Duck Shoot Game ---
-  const canvas = document.getElementById('duckGame');
+  const canvas document.getElementById('duckGame');
   const ctx = canvas ? canvas.getContext('2d') : null;
   let ducks = [];
   let score = 0;
