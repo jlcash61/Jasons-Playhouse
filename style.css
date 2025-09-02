@@ -78,6 +78,10 @@ button:hover {
   box-shadow: 0 6px 12px rgba(0,0,0,0.1);
 }
 
+.fidget h2 {
+  cursor: default;
+}
+
 .fidget-area {
   position: relative;
   width: 100%;
@@ -87,6 +91,15 @@ button:hover {
   border: 2px dashed rgba(0,0,0,0.1);
   border-radius: 12px;
   overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.fidget-bubble,
+.fidget-square,
+.breathing-circle {
+  position: absolute;
 }
 
 .fidget-bubble {
@@ -96,9 +109,9 @@ button:hover {
   border-radius: 50%;
   cursor: grab;
   transition: transform 0.2s ease, background 0.5s ease;
-  position: absolute;
-  top: 20px;
-  left: 20px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-150%, -50%);
 }
 
 .fidget-square {
@@ -107,14 +120,14 @@ button:hover {
   background: linear-gradient(135deg, #a18cd1, #fbc2eb);
   cursor: pointer;
   transition: transform 0.5s ease;
-  position: absolute;
-  bottom: 20px;
-  left: 20px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   transform-origin: center;
 }
 
 .fidget-square.spin {
-  transform: rotate(360deg);
+  transform: translate(-50%, -50%) rotate(360deg);
 }
 
 .breathing-circle {
@@ -123,9 +136,9 @@ button:hover {
   border-radius: 50%;
   background: linear-gradient(135deg, #89f7fe, #66a6ff);
   animation: breathe 6s ease-in-out infinite;
-  position: absolute;
-  right: 20px;
-  bottom: 20px;
+  top: 50%;
+  left: 50%;
+  transform: translate(50%, -50%);
 }
 
 @keyframes breathe {
