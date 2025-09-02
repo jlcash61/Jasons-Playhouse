@@ -63,7 +63,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // --- Duck Shoot Game ---
-  const canvas document.getElementById('duckGame');
+  const canvas = document.getElementById('duckGame');
   const ctx = canvas ? canvas.getContext('2d') : null;
   let ducks = [];
   let score = 0;
