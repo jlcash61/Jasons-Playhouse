@@ -91,7 +91,7 @@ document.addEventListener('DOMContentLoaded', () => {
     ctx.fillText("💥", x, y);
     setTimeout(() => {
       drawDucks();
-    }, 200);
+    }, 600);
   }
 
   function gameLoop() {
