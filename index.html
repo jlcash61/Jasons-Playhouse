@@ -1,21 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Jason's Playhouse</title>
-  <link rel="stylesheet" href="style.css?v=2.0" />
+  <link rel="stylesheet" href="style.css?v=2.1" />
 </head>
+
 <body>
   <header>
     <h1>Jason's Playhouse 🎉</h1>
     <nav>
+      <div id="showedUp">
+        <button id="showedUpBtn">✨ I Showed Up Today</button>
+        <p id="showedUpMsg"></p>
+      </div>
+
       <button data-view="fidgets">🌀 Fidgets</button>
       <button data-view="ducks">🦆 Ducks</button>
       <button data-view="calm">🌱 Calm Zone</button>
       <button data-view="daily">☀️ Daily Goodness</button>
     </nav>
   </header>
+
+
+
 
   <!-- The router will inject views here -->
   <main id="app"></main>
@@ -25,6 +35,7 @@
   </footer>
 
   <!-- Router entry point -->
-  <script type="module" src="app.js?v=2.0"></script>
+  <script type="module" src="app.js?v=2.1"></script>
 </body>
+
 </html>

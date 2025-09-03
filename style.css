@@ -89,3 +89,26 @@ footer {
     align-items: flex-start;
   }
 }
+
+#showedUp {
+  margin-top: 0.5rem;
+}
+
+#showedUpBtn {
+  padding: 0.4rem 1rem;
+  border: none;
+  border-radius: 6px;
+  background: #ffca28;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+#showedUpBtn:hover {
+  background: #f4b400;
+}
+
+#showedUpMsg {
+  min-height: 1.5em;   /* 👈 reserve space so it doesn’t jump */
+  margin: 0.25rem 0 0;
+  font-size: 0.9rem;
+}

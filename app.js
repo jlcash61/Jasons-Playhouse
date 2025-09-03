@@ -45,3 +45,42 @@ document.querySelector('nav').addEventListener('click', (e) => {
     routes[view](app);
   }
 });
+
+// Showed Up tracker
+const showedUpBtn = document.getElementById("showedUpBtn");
+const showedUpMsg = document.getElementById("showedUpMsg");
+
+function updateShowedUpMessage() {
+  const data = JSON.parse(localStorage.getItem("showedUp") || "{}");
+  if (data.date) {
+    showedUpMsg.textContent = `Last checked in: ${data.date} | Streak: ${data.streak} days`;
+  }
+}
+
+showedUpBtn.addEventListener("click", () => {
+  const today = new Date().toISOString().split("T")[0]; // YYYY-MM-DD
+  let data = JSON.parse(localStorage.getItem("showedUp") || "{}");
+
+  if (data.date === today) {
+    // Already clicked today
+    showedUpMsg.textContent = `Already checked in today (${today}) | Streak: ${data.streak} days`;
+  } else {
+    // New day → increment streak
+    const yesterday = new Date();
+    yesterday.setDate(yesterday.getDate() - 1);
+    const yStr = yesterday.toISOString().split("T")[0];
+
+    if (data.date === yStr) {
+      data.streak = (data.streak || 0) + 1; // continue streak
+    } else {
+      data.streak = 1; // reset streak
+    }
+
+    data.date = today;
+    localStorage.setItem("showedUp", JSON.stringify(data));
+    updateShowedUpMessage();
+  }
+});
+
+// Init
+updateShowedUpMessage();
