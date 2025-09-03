@@ -1,4 +1,4 @@
-# Jason's Playhouse 🎉
+# Jason's Playhouse V2.2🎉
 
 Jason's Playhouse is a playful single-page app built to provide relaxation, distraction, and a bit of fun.  
 It’s designed with modular views so Jason can switch between **games, fidgets, calming exercises, and daily inspiration**.
